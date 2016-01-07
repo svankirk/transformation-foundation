@@ -13,3 +13,15 @@
 12. When do we use the -H in curl to send the header information?  How is it useful
 13. Try...Catch doesn't seem to percolate up a try...catch in handler, did not catch an exception in handle put.  Why?
 14. Mongo  output shows 6 connections when server is started.  Where do these come from?
+15. 
+Moving files to github:
+    First make the repository (Name=RepositoryName) on github.
+    Open the terminal and make the new directory (mkdir NewDirectory).
+    Copy your ProjectFolder to this NewDirectory.
+    Change the present work directory to NewDirectory.
+    Run these commands
+    git init
+    git add ProjectFolderName
+    git commit -m "first commit"
+    git remote add origin https://github.com/YourGithubUsername/RepositoryName.git
+    git push -u origin master
