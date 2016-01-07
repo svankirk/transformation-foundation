@@ -1,0 +1,166 @@
+
+/* The body is the outermost layout component and contains the visible page content. Setting properties for the body element will help to create consistent styling of the page content and more manageable CSS. Besides using the body element to set global properties, it is common to use the body element to set the background color of the page and create a centered container for the page content to display. */
+body {
+	
+	background-color:#EFEADA;
+  color: #ffffff;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  line-height: 13pt;
+  margin: 0px auto 0px auto; /* Sets the margin properties for an element using shorthand notation (top, right, bottom, left) */
+  padding: 0 0 0 0; /* Sets the padding properties for an element using shorthand notation (top, right, bottom, left) */
+  text-align: center; /* Centers the page content container in IE 5 browsers. */
+  max-width: 1000px;
+}
+
+.content { 
+  width: 1000px; 
+}
+input[type="radio"]{
+  margin:130px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+}
+textarea {
+  width: 600px;
+  height:150px;
+}
+label {
+  width: 130px;
+  display: inline-block;
+}
+.lLabel {
+  width: 350px;
+  display: inline-block;
+}
+.mSize {
+  width: 200px;
+}
+.lSize {
+  width: 350px;
+}
+header h1 {
+  width:100%;
+  /*padding: 0px 0px 0px 0px; /* Sets the padding properties for an element using shorthand notation (top, right, bottom, left) */
+   margin: 2px auto 2px auto;
+  /* font-family: Arial,Helvetica,sans-serif; */
+  font-family: Comic, cursive, sans-serif;
+	font-size: 48px;
+	background-color: #193208;
+	text-align: Center;
+	line-height: normal;
+}
+
+span.tab {
+  padding:0 20px;
+}
+.center {
+  text-align: center;
+}
+.donate-button {
+  margin: 5px;
+  padding:6px 18px;
+  background-color: #3378B7;
+  display:inline-block;
+  color:white;
+  text-decoration: none;
+}
+.donate-button:hover {
+  color:white;
+  text-decoration:none;
+  background-color: #286090;
+}
+
+nav {
+	background-color: #193208;
+	border-color: #596e3f;
+	margin-top: -3px;
+	margin-bottom: 0px;
+}
+nav ul {
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 16px;
+	background-color: #193208;
+	text-align: Center;
+	line-height: normal;
+	padding:10px 10px;
+}
+nav ul li {
+	padding-right: 20px;
+	display:inline-block;
+}
+nav ul li a
+{
+  color: #fff;
+  text-decoration:none;
+}
+
+nav ul li a:hover,
+nav ul li a:focus
+{
+  color: #ff9933;
+  text-decoration:none;
+}
+footer {
+  background-color: #b5c9b9;
+  background-repeat: no-repeat;
+  background-size: 100% 65px;
+  height: 65px;
+  /*padding: 0px 0px 0px 0px;  Sets the padding properties for an element using shorthand notation (top, right, bottom, left) */
+  font-size: 14px;
+  text-align: center;
+  /*margin-top:-16px;*/
+  padding: 1px 15px 1px 15px; 
+}
+/* Contains the main page content. When using a mutliple column layout the margins will be set to account for the floated columns' width, margins, and padding. */
+section {
+  color: #333333;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size:16px;
+  text-align: left;
+  line-height: normal;
+  margin: 0 0 0 0; /* Sets the margin properties for an element using shorthand notation (top, right, bottom, left) */
+  padding: 10px 10px 10px 10px; /* Sets the padding properties for an element using shorthand notation (top, right, bottom, left) */
+  background-color: #ffffff;
+  margin-bottom:0pt;
+}
+
+section a, a:link {
+    /*color: #006633;*/
+    font-weight: bold;
+    text-decoration: none;
+}
+section a:focus {
+  outline:0px !important;
+}
+.ui-accordion-header {
+  background: #eeeeee;
+  color: #006633;
+}
+.ui-accordion-header-active {
+    border-bottom: 1px solid white;
+    border-top: 2px solid #ff9932;
+    border-left: 2px solid #ff9932;
+    border-right: 2px solid #ff9932;
+	background:white;
+	color:#ff9932;
+}
+.ui-accordion-content-active {
+  border-left: 2px solid #ff9932;
+  border-bottom: 2px solid #ff9932;
+  border-right: 2px solid #ff9932;
+  background: #ffffff;
+}
+.ui-accordion-content {
+  height:150px;
+}
+
+#accordion a:hover {
+  color:#ff9932;
+  border-color:#ff9932;
+}
+
+	  

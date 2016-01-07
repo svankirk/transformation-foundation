@@ -1,0 +1,15 @@
+{
+  "name": "chat-example",
+  "version": "0.0.1",
+  "description": "A simple database server.",
+  "main": "server.js",
+  "repository": "",
+  "author": "S&M",
+  "dependencies": {
+    "async": "~0.2.8",
+    "express": "^3.2.6",
+    "mongodb": "2.0",
+    "mongoose": "~4.0",
+    "socket.io": "~0.9.14"
+  }
+}

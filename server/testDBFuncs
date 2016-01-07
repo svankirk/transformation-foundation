@@ -1,0 +1,13 @@
+curl -i -X GET http://localhost:9000/application
+echo -------------------------------------------------------------------------------------
+curl -i -X POST -H "Content-Type:application/json" http://localhost:9000/application -d '{"name":"bob","address":"1234 bob st.","phone":"303-555-1212"}'
+echo -------------------------------------------------------------------------------------
+curl -i -X POST -H "Content-Type:application/json" http://localhost:9000/application -d '{"name":"bob","address":"555 bob st.","phone":"303-505-1212"}'
+echo -------------------------------------------------------------------------------------
+curl -i -X POST -H "Content-Type:application/json" http://localhost:9000/application -d '{"name":"bob","address":"666 bob st.","phone":"303-666-1212"}'
+echo -------------------------------------------------------------------------------------
+curl -i -X GET http://localhost:9000/application?name=bob
+echo -------------------------------------------------------------------------------------
+curl -i -X PUT -H "Content-Type:application/json" http://localhost:9000/application -d '[{"name":"bob"},{"name":"bob","address":"1234 new bob st.","phone":"720-555-1234"}]'
+echo -------------------------------------------------------------------------------------
+curl -i -X DELETE http://localhost:9000/application?name=bob
