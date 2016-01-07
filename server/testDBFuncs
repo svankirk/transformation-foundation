@@ -1,0 +1,53 @@
+echo -------------------------------------------------------------------------------------
+echo ----------------------------  Database Tests  ---------------------------------------
+echo -------------------------------------------------------------------------------------
+echo post error 1
+curl --insecure -i -X POST -H "Content-Type:application/json" http://localhost:8081/application -d '{"name:"bob","email":"bob@bobco.com","address":"1234 bob st.","phone":"303-555-1212"}'
+echo -------------------------------------------------------------------------------------
+echo post error 2 - empty
+curl --insecure -i -X POST -H "Content-Type:application/json" http://localhost:8081/application -d '{}'
+echo -------------------------------------------------------------------------------------
+echo post Bob
+curl --insecure -i -X POST -H "Content-Type:application/json" http://localhost:8081/application -d '{"name":"bob","email":"bob@bobco.com","address":"1234 bob st.","phone":"303-555-1111"}'
+echo -------------------------------------------------------------------------------------
+echo post Bob 2
+curl --insecure -i -X POST -H "Content-Type:application/json" http://localhost:8081/application -d '{"name":"bob2","email":"bob@bobco.com","address":"2468 bob2 st.","phone":"303-555-2222"}'
+echo -------------------------------------------------------------------------------------
+echo post Mary
+curl --insecure -i -X POST -H "Content-Type:application/json" http://localhost:8081/application -d '{"name":"mary","email":"mary@bobco.com","address":"555 mary st.","phone":"303-505-3333"}'
+echo -------------------------------------------------------------------------------------
+echo post Alice
+curl --insecure -i -X POST -H "Content-Type:application/json" http://localhost:8081/application -d '{"name":"alice","email":"alice@bobco.com","address":"666 alice st.","phone":"303-666-4444"}'
+echo -------------------------------------------------------------------------------------
+echo get bob,bob@bobco.com
+curl --insecure -i -X GET "http://localhost:8081/application?name=bob&email=bob@bobco.com"
+echo -------------------------------------------------------------------------------------
+echo put bob fail
+curl --insecure -i -X PUT -H "Content-Type:application/json" http://localhost:8081/application -d '[{"name":"bob"},{"name":"bob","email":"bob@bobco.com","address":"1234 new bob st.","phone":"wrong"}]'
+echo -------------------------------------------------------------------------------------
+echo get bob,bob@bobco.com
+curl --insecure -i -X GET "http://localhost:8081/application?name=bob&email=bob@bobco.com"
+echo -------------------------------------------------------------------------------------
+echo put bob,bob@bobco.com   telephone=right
+curl --insecure -i -X PUT -H "Content-Type:application/json" http://localhost:8081/application -d '[{"name":"bob","email":"bob@bobco.com"},{"name":"bob","address":"1234 new bob st.","phone":"right"}]'
+echo -------------------------------------------------------------------------------------
+echo get all bobs
+curl --insecure -i -X GET "http://localhost:8081/applicationQuery?name=bob"
+echo -------------------------------------------------------------------------------------
+echo delete bob, bob@bobco.com
+curl --insecure -i -X DELETE "http://localhost:8081/application?name=bob&email=bob@bobco.com"
+echo -------------------------------------------------------------------------------------
+echo get all docs
+curl --insecure -i -X GET http://localhost:8081/application
+echo -------------------------------------------------------------------------------------
+echo delete mary, mary@bobco.com
+curl --insecure -i -X DELETE "http://localhost:8081/application?name=mary&email=mary@bobco.com"
+echo -------------------------------------------------------------------------------------
+echo delete alice, alice@bobco.com
+curl --insecure -i -X DELETE "http://localhost:8081/application?name=alice&email=alice@bobco.com"
+echo -------------------------------------------------------------------------------------
+echo delete bob2, bob@bobco.com
+curl --insecure -i -X DELETE "http://localhost:8081/application?name=bob2&email=bob@bobco.com"
+echo -------------------------------------------------------------------------------------
+echo get all docs  -- should be blank
+curl --insecure -i -X GET http://localhost:8081/application

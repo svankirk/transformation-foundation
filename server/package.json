@@ -1,0 +1,17 @@
+{
+  "name": "server.express.js",
+  "version": "0.0.1",
+  "description": "A simple database server.",
+  "main": "server.express.js",
+  "repository": "",
+  "author": "S&M",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.14.2",
+    "express": "^3.2.6",
+    "jade": "^1.11.0",
+    "mongodb": "2.0",
+    "mongoose": "~4.0",
+    "socket.io": "~0.9.14"
+  }
+}

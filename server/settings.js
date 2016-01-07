@@ -1,0 +1,12 @@
+exports.usehttps = false;
+exports.listenPort = "8080";
+exports.applicationUrl = "/application";
+exports.applicationQueryUrl = "/application/query";
+exports.staticUrl = "/public";
+exports.database = "test";
+exports.collection = "applications";
+exports.dbURL = "mongodb://localhost:27017";
+exports.keyfields = [ "name", "email" ];
+exports.UNKNOWN = 404;
+exports.SUCCESS = 200;
+exports.FAILURE = 500;
