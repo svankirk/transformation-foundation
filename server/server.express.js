@@ -76,7 +76,7 @@ var app = express();
 // Use jade template engine to parse static files
 //app.set('view engine', 'jade');
 
-app.use(bodyParser.json()); // for parsing application/json
+//app.use(bodyParser.json()); // for parsing application/json
 
 app.use("/", function(req, res, next) {
   console.log('req: ' + req.method + ' url = ' +req.url);
@@ -104,9 +104,28 @@ app.get(settings.applicationUrl, function(req, res) {
 // add one application doc to the database,
 // if we are posting, grab chunks from client until the end and build the query.
 app.post(settings.applicationUrl, function(req, res) {
-	var reqBody = req.body;
-	thisdb.addDoc(reqBody, onCompletion, { "req":req,"res":res });
+	var reqBody = '';
+	req.on("data", function(data) {
+		reqBody += data;
+		if (reqBody.length > 1e7) { //1MB
+			// send 413 - request too large
+		}
+	});
+	req.on("end", function() {   
+		try {  // JSON parse will throw an error with invalid JSON, so need to catch it here.  This will not be caught by handle, since it is an asynchronis function and not in the call stack
+			var query = JSON.parse(reqBody); // This is from the video in note 10.  Not sure how this works yet.
+			thisdb.addDoc(query, onCompletion, { "req":req,"res":res });
+		}
+		catch (ex) {
+	//				sendError(settings.FAILURE, "" + ex);
+			var query2 = qs.parse(reqBody);
+			thisdb.addDoc(query2, onCompletion, { "req":req,"res":res });
+		}
+	
+	});
+	
 });
+
 
 // update a single application
 app.put(settings.applicationUrl, function(req, res) {

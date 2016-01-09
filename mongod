@@ -1,1 +1,3 @@
-mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@" --fork
+mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"
+
+
